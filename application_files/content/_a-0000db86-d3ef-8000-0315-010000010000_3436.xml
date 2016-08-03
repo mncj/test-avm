@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CASE_APP_LoadSampleOrders</name>
+        <uuid>_a-0000db86-d3ef-8000-0315-010000010000_3436</uuid>
+        <description>A task UI for auto loading sample Orders</description>
+        <parentUuid>_a-0000d9c4-bcac-8000-9ba2-011c48011c48_6388</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=#&quot;SYSTEM_SYSRULES_formLayout&quot;(
+  label: &quot;Generate Sample Orders?&quot;,
+  instructions: &quot;Complete this action if you would like to system to auto-generate random Orders within a timeframe.&quot;,
+  firstColumnContents: {
+    #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+      firstColumnContents:{
+        #&quot;SYSTEM_SYSRULES_integerField&quot;(
+          label: &quot;How many orders would you like to generate?&quot;,
+          required: true,
+          instructions: &quot;This value toggles the total number of orders to generate in the system. For example, if set to 50, a total number of 50 orders will be generated. (Max 100)&quot;,          
+          value: ri!numberofOrders,
+          saveInto: ri!numberofOrders,
+          validations: {
+            if(ri!numberofOrders &lt;= 0, &quot;You must enter a value greater than zero.&quot;, null),
+            if(ri!numberofOrders &gt; 100, &quot;You can enter a value up to 100.&quot;, null)
+          }
+        )
+      },
+      secondColumnContents:{
+        #&quot;SYSTEM_SYSRULES_integerField&quot;(
+          label: &quot;Generate orders within how many days?&quot;,
+          required: true,
+          instructions: &quot;This values toggles the number of past days to generate orders.  For example, if set to 100, all orders dates will be generated with a date posted within the last 100 days&quot;,
+          value: ri!daysOrders,
+          saveInto: ri!daysOrders,
+          validations: {
+            if(ri!daysOrders &lt; 1, &quot;You must enter a value greater than zero.&quot;, null),
+            if(ri!daysOrders &gt; 3650, &quot;You must enter a value smaller than 3,650 (~10 years).&quot;, null)
+          }
+        )
+      }
+    )
+  },
+  buttons: #&quot;SYSTEM_SYSRULES_ButtonLayout&quot;(
+    primaryButtons: {
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
+        label: &quot;Submit&quot;,
+        style: &quot;PRIMARY&quot;,
+        confirmMessage: &quot;Submitting this form will generate sample content.  Are you sure?&quot;,
+        value: false,
+        saveInto: ri!cancel
+      )
+    },
+    secondaryButtons: {
+      #&quot;SYSTEM_SYSRULES_ButtonWidgetSubmit&quot;(
+        label: &quot;Cancel&quot;,
+        confirmMessage: &quot;If you would like to generate content later, look for and run the 'CASE_APP Load All Data' process.&quot;,
+        value: true,
+        saveInto: ri!cancel,
+        skipValidation: true
+      )
+    }
+  )
+)</definition>
+        <namedTypedValue>
+            <name>cancel</name>
+            <type>
+                <name>boolean</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>daysOrders</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>numberofOrders</name>
+            <type>
+                <name>int</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

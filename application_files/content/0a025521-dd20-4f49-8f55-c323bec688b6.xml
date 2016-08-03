@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CASE_APP_generateNewsfeedPost</name>
+        <uuid>0a025521-dd20-4f49-8f55-c323bec688b6</uuid>
+        <description></description>
+        <parentUuid>_a-0000d9b5-6c6c-8000-9e06-010000010000_743</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>{
+  'type!{urn:com:appian:types}CASE_APP_NewsfeedPost'(
+    postType: &quot;user&quot;,
+    postIconDocId: null,
+    postSourceName: null,
+    postUserAuthor: &quot;chris.watkins&quot;,
+    postMessage: &quot;Inventory for Brother products have gone low due to high customer demand.  We will be receiving a new shipment at the start of next week.&quot;,
+    postDelayInMinutes: 5,
+    postAttachmentDocIds: null,
+    postRecordTags: null,
+    postComments: {
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;virginia.lane&quot;,
+        Message: &quot;When exactly will new stock become available for customer orders?&quot;,
+        PostDelay: 5,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;chris.watkins&quot;,
+        Message: &quot;We expect our next shipment of Brother products on Tuesday next week&quot;,
+        PostDelay: 8,
+        isHazard: false
+      )
+    },
+    postMoreInfo: {}
+  ),
+  'type!{urn:com:appian:types}CASE_APP_NewsfeedPost'(
+    postType: &quot;system&quot;,
+    postIconDocId: #&quot;_a-0000dc5c-bb1d-8000-edc1-01ef9001ef90_4311&quot;[1],
+    postSourceName: &quot;BPM Reports&quot;,
+    postUserAuthor: null,
+    postMessage: &quot;Customer order has been waiting in processing longer than 48 hours.&quot;,
+    postDelayInMinutes: 20,
+    postAttachmentDocIds: null,
+    postRecordTags: null,
+    postComments: {
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;john.rogers&quot;,
+        Message: &quot;What is the reason for this delay?  We need orders to be processed under 2 days maximum!&quot;,
+        PostDelay: 5,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;karen.anderson&quot;,
+        Message: &quot;Our supplier was delayed due to a weather event.  This is the cause for the order processing delay.&quot;,
+        PostDelay: 7,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;john.rogers&quot;,
+        Message: &quot;When will the supplier be back on schedule?&quot;,
+        PostDelay: 10,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;karen.anderson&quot;,
+        Message: &quot;We expect the supplier to be in this afternoon for order fulfillment.&quot;,
+        PostDelay: 13,
+        isHazard: false
+      )
+    },
+    postMoreInfo: {}
+  ),
+  'type!{urn:com:appian:types}CASE_APP_NewsfeedPost'(
+    postType: &quot;system&quot;,
+    postIconDocId: #&quot;_a-0000dc5c-bb1d-8000-edc1-01ef9001ef90_4311&quot;[2],
+    postSourceName: &quot;SAP&quot;,
+    postUserAuthor: null,
+    postMessage: &quot;Overdue payments total for June is $43,225.80&quot;,
+    postDelayInMinutes: 25,
+    postAttachmentDocIds: null,
+    postRecordTags: null,
+    postComments: {
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;joseph.clark&quot;,
+        Message: &quot;This is far too high.  What is our sales team doing to contact these customers and get payments for invoices resolved?&quot;,
+        PostDelay: 1,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;laura.davis&quot;,
+        Message: &quot;We are working with Finance on a calling campaign for all customers with outstanding invoices.  We’ll provide updates here.&quot;,
+        PostDelay: 3,
+        isHazard: false
+      )
+    },
+    postMoreInfo: {}
+  ),
+  'type!{urn:com:appian:types}CASE_APP_NewsfeedPost'(
+    postType: &quot;user&quot;,
+    postIconDocId: null,
+    postSourceName: null,
+    postUserAuthor: &quot;brian.chen&quot;,
+    postMessage: &quot;I have updated the document “A Guide to Energy Star Ratings.”  Please review and offer any feedback.  I will publish for sales training starting next week.&quot;,
+    postDelayInMinutes: 40,
+    postAttachmentDocIds: #&quot;_a-0000dc5c-bb1d-8000-edc1-01ef9001ef90_4311&quot;[3],
+    postRecordTags: null,
+    postComments: {
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;george.garcia&quot;,
+        Message: &quot;Thanks Brian for putting this together.  This document will be really helpful to our field personnel.&quot;,
+        PostDelay: 4,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;linda.jones&quot;,
+        Message: &quot;Will we have a sales training session on this next week, or do we just review this document?&quot;,
+        PostDelay: 8,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;brian.chen&quot;,
+        Message: &quot;Yes.  We will have a sales training session to go along with this training document.&quot;,
+        PostDelay: 8,
+        isHazard: false
+      )
+    },
+    postMoreInfo: {}
+  ),
+  'type!{urn:com:appian:types}CASE_APP_NewsfeedPost'(
+    postType: &quot;user&quot;,
+    postIconDocId: null,
+    postSourceName: null,
+    postUserAuthor: &quot;laura.davis&quot;,
+    postMessage: &quot;All customer service reps are required to complete the training on our new product offerings.  Please let me know if you have any questions.&quot;,
+    postDelayInMinutes: 45,
+    postAttachmentDocIds: null,
+    postRecordTags: null,
+    postComments: {
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;deborah.geary&quot;,
+        Message: &quot;How do we schedule our training sessions?&quot;,
+        PostDelay: 4,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;laura.davis&quot;,
+        Message: &quot;You can schedule training from the process action on this system.&quot;,
+        PostDelay: 8,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;brian.chen&quot;,
+        Message: &quot;Is there a deadline for when we must complete the training?&quot;,
+        PostDelay: 10,
+        isHazard: false
+      ),
+      'type!{urn:com:appian:types:CASE_APP}CASE_APP_TempoComments'(
+        User: &quot;laura.davis&quot;,
+        Message: &quot;Yes.  All training must be completed by the end of the month.&quot;,
+        PostDelay: 13,
+        isHazard: false
+      ),
+    },
+    postMoreInfo: {}
+  )
+}</definition>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

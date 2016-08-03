@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types"
+  xmlns:tns="urn:com:appian:types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%7DCASE_APP_Value.xsd"/>
+  <xsd:complexType name="CASE_APP_LabelValue">
+    <xsd:annotation>
+      <xsd:documentation><![CDATA[LabelValue Representation]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="label" nillable="true" type="xsd:string"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0" name="value" type="tns:CASE_APP_Value"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema targetNamespace="urn:com:appian:types"
+  xmlns:app2="urn:com:appian:types:CASE_APP"
+  xmlns:tns="urn:com:appian:types" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:include schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%7DCASE_APP_LabelValue.xsd"/>
+  <xsd:import namespace="urn:com:appian:types:CASE_APP" schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3ACASE_APP%7DCASE_APP_RecordAssociation.xsd"/>
+  <xsd:import namespace="urn:com:appian:types:CASE_APP" schemaLocation="%7Burn%3Acom%3Aappian%3Atypes%3ACASE_APP%7DCASE_APP_TempoComments.xsd"/>
+  <xsd:complexType name="CASE_APP_NewsfeedPost">
+    <xsd:annotation>
+      <xsd:documentation><![CDATA[Contains all details to generate a tempo post]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element name="id" nillable="true" type="xsd:int">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      <xsd:element name="postType" nillable="true" type="xsd:string"/>
+      <xsd:element name="postIconDocId" nillable="true" type="xsd:int"/>
+      <xsd:element name="postSourceName" nillable="true" type="xsd:string"/>
+      <xsd:element name="postUserAuthor" nillable="true" type="xsd:string"/>
+      <xsd:element name="postMessage" nillable="true" type="xsd:string"/>
+      <xsd:element name="postDelayInMinutes" nillable="true" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0"
+        name="postAttachmentDocIds" nillable="true" type="xsd:int"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0"
+        name="postRecordTags" type="app2:CASE_APP_RecordAssociation"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0"
+        name="postComments" type="app2:CASE_APP_TempoComments"/>
+      <xsd:element maxOccurs="unbounded" minOccurs="0"
+        name="postMoreInfo" type="tns:CASE_APP_LabelValue"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
